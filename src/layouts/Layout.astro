@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import type {Lang} from '../i18n/translations';
+import {t, getLocalePath} from '../i18n/translations';
+
+interface Props {
+    lang: Lang;
+    title: string;
+    currentPath: string;
+}
+
+const {lang, title, currentPath} = Astro.props;
+const text = t(lang);
+
+const samePage = `/${lang}${currentPath}`
+const switchPage = lang == 'fr' ? `/en${currentPath}` : `/fr${currentPath}`;
+
+const navLinks = [
+    {href: getLocalePath(lang, '/'), label: text.nav.home},
+    {href: getLocalePath(lang, '/projects'), label: text.nav.projects},
+    {href: getLocalePath(lang, '/about'), label: text.nav.about},
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Maxence — Game Developer"/>
+    <title>{title} · Maxence DELACROIX</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+
+    <script is:inline>
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <style is:inline>
+        .receipt { background-color: #e9e7e0; }
+        .receipt.dark { background-color: #141414; }
+    </style>
+</head>
+
+<body>
+<div class="receipt">
+    <!-- Header -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.3rem;">
+        <div>
+            <a href={getLocalePath(lang, '/')} style="text-decoration:none; color: inherit;">
+                <p style="font-size: 20px; font-weight: 500; margin: 0 0 2px;">MAXENCE DELACROIX</p>
+            </a>
+            <p style="font-size: 11px; color: var(--ink-faint); margin: 0;">{text.home.subtitle}</p>
+        </div>
+        <div class="lang-switch">
+            <button id="theme-toggle" class="theme-switch">☀︎  </button>
+            <a href={lang == 'fr' ? samePage : switchPage} class={lang === 'fr' ? 'active' : ''}>FR</a>
+            <span>/</span>
+            <a href={lang == 'en' ? samePage : switchPage} class={lang === 'en' ? 'active' : ''}>EN</a>
+        </div>
+    </div>
+
+    <nav class="nav-receipt">
+        {navLinks.map(link => (
+                <a href={link.href} class={Astro.url.pathname === link.href ? 'active' : ''}>
+                    {link.label}
+                </a>
+        ))}
+    </nav>
+
+    <hr class="rule-solid"/>
+
+    <!-- Page content -->
+    <slot/>
+
+    <!-- Barcode footer -->
+    <div class="barcode">
+        {[2, 1, 3, 1, 2, 1, 1, 3, 2, 1, 2, 1, 3, 1, 2, 2, 1, 3, 1, 2, 1, 1, 1, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 3, 1, 2, 2, 1, 3, 1, 1].map((w) => (
+                <div class="bar" style={`width: ${w * 1.5}px; height: ${50}px;`}></div>
+        ))}
+    </div>
+    <p class="footer-txt">maxencedcx.github.io · {text.home.footer_thanks}</p>
+</div>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function updateIcon() {
+        if (toggle) toggle.textContent = html.classList.contains('dark') ? '☽' : '☀︎';
+    }
+
+    updateIcon();
+
+    toggle?.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        updateIcon();
+    });
+</script>
+</body>
+</html>

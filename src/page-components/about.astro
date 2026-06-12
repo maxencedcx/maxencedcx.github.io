@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {type Lang, t, receipt_number} from '../i18n/translations';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const text = t(lang).about;
+const home = t(lang).home;
+---
+
+<Layout lang={lang} title="About" currentPath="/about">
+    <p class="section-head reveal">{receipt_number}</p>
+    <div class="reveal-group">
+        <div class="receipt-row reveal-item"><span class="lbl">{text.name_label}</span><span class="val">Maxence DELACROIX</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.role_label}</span><span class="val">Game Programmer</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.location_label}</span><span class="val">Lille, France</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.languages_label}</span><span class="val">C# · C · C++</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.passion_label}</span><span class="val">{text.passion_value}</span></div>
+    </div>
+    <hr class="rule-dashed reveal"/>
+    <p class="section-head reveal">{text.bio_title}</p>
+    <p class="reveal" style="font-size:13px;color:var(--ink-muted);line-height:1.8;margin:0 0 1rem;">{text.bio}</p>
+    <hr class="rule-dashed reveal"/>
+    <p class="section-head reveal">{text.contact_title}</p>
+    <div class="reveal-group">
+        <div class="receipt-row reveal-item">
+            <span class="lbl">{text.github_label}</span><a href="https://github.com/maxencedcx" target="_blank" rel="noopener" style="font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);">github.com/maxencedcx</a>
+        </div>
+        <div class="receipt-row reveal-item">
+            <span class="lbl">{text.email_label}</span><a href="mailto:maxence.delacroix@outlook.fr" style="font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);">maxence.delacroix@outlook.fr</a>
+        </div>
+    </div>
+    <hr class="rule-solid reveal"/>
+    <div class="receipt-row reveal">
+        <span style="font-size:15px;font-weight:500;">MAXENCE DELACROIX</span>
+        <span style="font-size:13px;color:var(--ink-muted);">{home.subtitle}</span>
+    </div>
+</Layout>

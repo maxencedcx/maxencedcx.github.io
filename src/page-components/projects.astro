@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {type Lang, t, receipt_number} from '../i18n/translations';
+import {projects} from '../content/projects';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const text = t(lang);
+---
+
+<Layout lang={lang} title="Projects" currentPath="/projects">
+    <p class="section-head reveal">{receipt_number}</p>
+    {[...projects].reverse().map((p, i) => (
+            <div class="reveal" style="margin-bottom:0.5rem;">
+                <div class="receipt-row"><span style="font-size:11px;color:var(--ink-faint);">#{p.id}</span><span style="font-size:11px;color:var(--ink-faint);">{p.year_of_release}</span></div>
+                <div class="project-img"><img src=`/images/${p.slug}/banner.png` alt=`${p.title} · screenshot` /></div>
+                <div class="receipt-row" style="margin-top:0.4rem;"><span style="font-size:15px;font-weight:500;">{p.title}</span><span style="font-size:12px;color:var(--ink-muted);">{p.genre[lang]}</span></div>
+                <p style="font-size:12px;color:var(--ink-muted);margin:0.4rem 0 0.5rem;line-height:1.5;">{p.description[lang]}</p>
+                <div style="margin-bottom:0.6rem;">{p.tags.map(tag => <span class="tag">{tag}</span>)}</div>
+                <div style="display:flex;gap:0.8rem;">
+                    {p.itch_url && (<a href={p.itch_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.itch_label}</a>)}
+                    {p.steam_url && (<a href={p.steam_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.steam_label}</a>)}
+                    {p.code_url && (<a href={p.code_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.code_label}</a>)}
+                    <a href={`/${lang}/projects/${p.slug}`} class="btn-receipt">Details →</a>
+                </div>
+                {i < projects.length - 1 && <hr class="rule-dashed" style="margin-top:1.2rem;"/>}
+            </div>
+    ))}
+    <hr class="rule-solid reveal"/>
+    <div class="receipt-row reveal"><span style="font-size:15px;font-weight:500;">{text.home.total_label}</span><span style="font-size:15px;font-weight:500;">{projects.length}</span></div>
+</Layout>

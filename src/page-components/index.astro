@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {type Lang, t, receipt_number} from '../i18n/translations';
+import {projects, lastProject, isPro} from '../content/projects';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const text = t(lang);
+---
+
+<Layout lang={lang} title="Index" currentPath="/">
+    <p class="section-head reveal">{receipt_number}</p>
+    <div class="reveal-group">
+        <div class="receipt-row reveal-item"><span class="lbl">{text.home.status_label}</span><span class="val">{text.home.status_value}</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.home.specialty_label}</span><span class="val">{text.home.specialty_value}</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.home.tools_label}</span><span class="val">{text.home.tools_value}</span></div>
+        <div class="receipt-row reveal-item"><span class="lbl">{text.home.projects_label}</span><span class="val">{projects.filter((x) => isPro(x) && x.year_of_release != null).length}</span></div>
+    </div>
+    <hr class="rule-dashed reveal"/>
+    <p class="reveal" style="font-size: 18px; font-weight: 500; margin: 1rem 0;">{text.home.tagline}</p>
+    <hr class="rule-dashed reveal"/>
+    <p class="section-head reveal">— Item — Latest project</p>
+    <div class="reveal">
+        <div class="project-img"><img src=`/images/${lastProject.slug}/banner.png` alt=`${lastProject.title} · screenshot` /></div>
+        <div class="receipt-row" style="margin-top:0.5rem;"><span class="lbl">{text.projects.genre_label}</span><span class="val">{lastProject.genre[lang]}</span></div>
+        <div class="receipt-row"><span class="lbl">{text.projects.duration_label}</span><span class="val">{lastProject.duration[lang]}</span></div>
+        <div style="margin:0.5rem 0;">{lastProject.tags.map(tag => <span class="tag">{tag}</span>)}</div>
+        <div style="display:flex;justify-content:space-between;margin-top:0.8rem;">
+            <a href={`/${lang}/projects/${lastProject.slug}`} class="btn-receipt">See project</a>
+            {lastProject.itch_url && (<a href={lastProject.itch_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.itch_label}</a>)}
+        </div>
+    </div>
+    <hr class="rule-dashed reveal"/>
+    <p class="section-head reveal">{text.home.projects_subtotal}</p>
+    <div class="reveal-group">
+        {[...projects].reverse().map((p) => (
+                <a href={`/${lang}/projects/${p.slug}`} style="text-decoration:none;color:inherit;display:block;">
+                    <div class="leader-row reveal-item" style="padding:5px 0;">
+                        <span style="font-size:11px;color:var(--ink-faint);">#{p.id}</span>
+                        <span style="font-size:13px;margin-left:8px;">{p.title}</span>
+                        <div class="dots"></div>
+                        <span style="font-size:12px;color:var(--ink-muted);">{p.genre[lang]}</span>
+                    </div>
+                </a>
+        ))}
+    </div>
+    <hr class="rule-solid reveal"/>
+    <div class="receipt-row reveal"><span style="font-size:15px;font-weight:500;">{text.home.total_label}</span><span style="font-size:15px;font-weight:500;">{projects.length}</span></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:1rem;" class="reveal"><a href=`/${lang}/projects` class="btn-receipt">{text.home.see_all}</a></div>
+</Layout>

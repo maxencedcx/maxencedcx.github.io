@@ -1,0 +1,60 @@
+﻿import type { Translations } from './type.ts';
+
+const fr: Translations =
+    {
+        nav: {
+            home: 'Index',
+            projects: 'Projets',
+            about: 'À propos',
+            contact: 'Contact',
+        },
+        home: {
+            receipt_number: '#H0ME',
+            status_label: 'Statut',
+            status_value: 'Disponible',
+            specialty_label: 'Spécialité',
+            specialty_value: 'Jeux vidéo · POO',
+            tools_label: 'Outils',
+            tools_value: 'Unity · C# · Git',
+            projects_label: 'Projets livrés',
+            game_jams_label: 'Game Jams',
+            subtitle: 'Programmeur jeu vidéo',
+            tagline: 'PORTFOLIO',
+            projects_section: '— Articles —',
+            projects_subtotal: '— Sous-total —',
+            total_label: 'TOTAL PROJETS',
+            see_all: 'Voir tous les projets →',
+            footer_thanks: 'merci de votre visite',
+        },
+        projects: {
+            title: 'Projets',
+            receipt_number: '#PR0JETS',
+            duration_label: 'Durée de développement',
+            year_of_release_label: 'Année de sortie',
+            genre_label: 'Genre',
+            company_label: 'Studio',
+            team_label: 'Équipe',
+            itch_label: 'Jouer sur itch.io ↗',
+            steam_label: 'Voir sur Steam ↗',
+            code_label: 'Voir le code source ↗',
+            back: '← Retour',
+        },
+        about: {
+            title: 'À propos',
+            receipt_number: '#APR0P0S',
+            name_label: 'Nom',
+            role_label: 'Rôle',
+            location_label: 'Localisation',
+            technologies_label: 'Technologies',
+            languages_label: 'Langages',
+            passion_label: 'Passions',
+            passion_value: 'Photographie argentique · Radonnées · Escalade · Jeu de rôle papier',
+            bio_title: '— Profil —',
+            bio: `A programmer won over by object-oriented design and software architecture, I focus on writing code that is readable, modular, reliable and maintainable over time. I also know how to adapt to a team's needs and I am always eager to learn new things, whether it is new technologies or new paradigms.`,
+            contact_title: '— Contact —',
+            github_label: 'GitHub',
+            email_label: 'Email',
+        },
+    };
+
+export default fr;

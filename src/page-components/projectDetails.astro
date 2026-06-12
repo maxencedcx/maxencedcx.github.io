@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {type Lang, t} from '../i18n/translations';
+import {type Project} from '../content/projects';
+
+interface Props {
+    lang: Lang;
+    project: Project;
+}
+
+const { project } = Astro.props;
+const { lang } = Astro.props;
+const text = t(lang);
+---
+
+<Layout lang={lang} title={project.title} currentPath={`/projects/${project.slug}`}>
+    <div class="reveal">
+        <a href=`/${lang}/projects` style="font-size:12px;color:var(--ink-muted);text-decoration:none;border-bottom:1px solid var(--rule);">{text.projects.back}</a>
+    </div>
+    <p class="section-head reveal" style="margin-top:1.2rem;">— Item #{project.id} —</p>
+    <div class="reveal">
+        <div class="project-img"><img src=`/images/${project.slug}/banner.png` alt=`${project.title} · screenshot` /></div>
+    </div>
+    <div class="reveal-group" style="margin-top:0.5rem;">
+        <div class="receipt-row reveal-item">
+            <span class="lbl">{text.projects.genre_label}</span>
+            <span class="val">{project.genre[lang]}</span>
+        </div>
+        {project.company && (
+            <div class="receipt-row reveal-item">
+                <span class="lbl">{text.projects.company_label}</span>
+                <span class="val">{project.company}</span>
+            </div>
+        )}
+        {project.year_of_release && (
+            <div class="receipt-row reveal-item">
+                <span class="lbl">{text.projects.year_of_release_label}</span>
+                <span class="val">{project.year_of_release}</span>
+            </div>
+        )}
+        <div class="receipt-row reveal-item">
+            <span class="lbl">{text.projects.duration_label}</span>
+            <span class="val">{project.duration[lang]}</span>
+        </div>
+        {project.team && (
+            <div class="receipt-row reveal-item">
+                <span class="lbl">{text.projects.team_label}</span>
+                <span class="val">{project.team[lang]}</span>
+            </div>
+        )}
+    </div>
+    <hr class="rule-dashed reveal"/>
+    <div class="reveal">
+        <div style="margin-bottom:0.8rem;">{project.tags.map(tag => <span class="tag">{tag}</span>)}</div>
+        <p style="white-space: pre-line;font-size:13px;color:var(--ink-muted);line-height:1.7;margin:0 0 1rem;">{project.description[lang]}</p>
+    </div>
+    <hr class="rule-dashed reveal"/>
+    {project.itch_embed && (
+            <p class="section-head reveal">— Demo —</p>
+            <div class="reveal" style="border:1px solid var(--rule);overflow:hidden;aspect-ratio:16/9;background:var(--paper-off);">
+                <iframe src={project.itch_embed} width="100%" height="100%" allowfullscreen style="display:block;"></iframe>
+            </div>
+    )}
+    <hr class="rule-solid reveal"/>
+    <div style="display:flex;justify-content:space-between;align-items:center;" class="reveal">
+        <a href=`/${lang}/projects` class="btn-receipt">{text.projects.back}</a>
+        {project.itch_url && (<a href={project.itch_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.itch_label}</a>)}
+        {project.steam_url && (<a href={project.steam_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.steam_label}</a>)}
+        {project.code_url && (<a href={project.code_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.code_label}</a>)}
+    </div>
+</Layout>
