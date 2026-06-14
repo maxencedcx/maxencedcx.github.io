@@ -54,7 +54,7 @@
         passion_label: 'Passion',
         passion_value: 'Analog photography · Hiking · Bouldering · Paper roleplay',
         bio_title: '— Profile —',
-        bio: `Developer passionate about building robust and expressive game systems. I work in C# with Unity using a rigorous object-oriented approach — clean architecture, maintainable code, satisfying gameplay.`,
+        bio: `A programmer won over by object-oriented design and software architecture, I focus on writing code that is readable, modular, reliable and maintainable over time. I also know how to adapt to a team's needs and I am always eager to learn new things, whether it is new technologies or new paradigms.`,
         contact_title: '— Contact —',
         github_label: 'GitHub',
         email_label: 'Email',
