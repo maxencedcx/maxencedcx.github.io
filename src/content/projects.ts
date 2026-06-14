@@ -185,8 +185,20 @@ export const projects: Project[] = [
             The project takes two forms, one static on phone and the other in free movement (6DOF). Both forms invite the player to reflect on their relationship with the living world by foregrounding listening as well as the perception of oneself and one's surroundings.`,
         },
         tech_description: {
-            fr: ``,
-            en: ``,
+            fr: `• Simulation de vie animale réagissant à son environnement en temps réel
+            • Boids system en utilisant Unity Burst
+            • Plugin Wwise
+            • Système de bruit de pas
+            • Système de météo, Cycle jour/nuit
+            • CD/CI, build iOS et déploiement apple store
+            • Mise en place d'un gitlab self-hosté via Scaleway`,
+            en: `• Animal life simulation, reacting to is environment in real time
+            • Boids system using Unity Burst
+            • Wwise plugin
+            • Footsep system
+            • Weather system, night/day cycle
+            • CD/CI, iOS build and apple store publishing
+            • Self-hosted gitlab server using Scaleway`,
         },
     },
 ];
