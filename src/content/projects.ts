@@ -61,7 +61,7 @@ export const projects: Project[] = [
         tags: ['Unity', 'C#', 'WebGL'],
         short_description: {
             fr: `Loopin' Goblin est un jeu d'action point and click réalisé dans le cadre de la GMTK 2025, qui avait comme thème "Loop".`,
-            en: `Loopin' Goblin is a point and click action game that was coded for GMTK 2025, themed around "Loop".\\n`
+            en: `Loopin' Goblin is a point and click action game that was coded for GMTK 2025, themed around "Loop".`
         },
         description: {
             fr: `Loopin' Goblin est un jeu d'action point and click réalisé dans le cadre de la GMTK 2025, qui avait comme thème "Loop".\n
