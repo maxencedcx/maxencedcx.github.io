@@ -64,6 +64,7 @@ const text = t(lang);
     <hr class="rule-dashed reveal"/>
     <div class="reveal">
         <div style="margin-bottom:0.8rem;">{project.tags.map(tag => <span class="tag">{tag}</span>)}</div>
+        <p class="section-head reveal">{text.projects.description_label}</p>
         <p style="white-space: pre-line;font-size:13px;color:var(--ink-muted);line-height:1.7;margin:0 0 1rem;">{project.description[lang]}</p>
         {project.tech_description && (
                 <p class="section-head reveal">{text.projects.tech_description_label}</p>
