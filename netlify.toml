@@ -1,4 +1,5 @@
-﻿[[headers]]
+﻿# netlify.toml
+[[headers]]
   for = "/*"
   [headers.values]
     Cross-Origin-Opener-Policy = "same-origin"
