@@ -40,7 +40,7 @@ const text = t(lang);
                 <a href={`/${lang}/projects/${p.slug}`} style="text-decoration:none;color:inherit;display:block;">
                     <div class="leader-row reveal-item" style="padding:5px 0;">
                         <span style="font-size:11px;color:var(--ink-faint);">#{p.id}</span>
-                        <span style="font-size:13px;margin-left:8px;">{p.title}</span>
+                        <span style="font-size:13px;margin-left:8px;">{(p.override_title && p.override_title[lang]) || p.title}</span>
                         <div class="dots"></div>
                         <span style="font-size:12px;color:var(--ink-muted);">{p.genre[lang]}</span>
                     </div>
