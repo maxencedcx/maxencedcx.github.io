@@ -1,9 +1,11 @@
 export interface Project {
     id: string;
     slug: string;
+    override_title?: {fr: string, en: string};
     title: string;
     year_of_release?: string;
     platforms?: string[];
+    sales?: string;
     genre: { fr: string; en: string };
     nominations?: string[];
     duration: { fr: string; en: string };
@@ -11,7 +13,9 @@ export interface Project {
     company?: string;
     role: { fr: string; en: string };
     tags: string[];
+    short_description: {fr: string; en: string };
     description: { fr: string; en: string };
+    tech_description?: {fr: string; en: string };
     itch_url?: string;
     itch_embed?: string;
     steam_url?: string;
@@ -33,6 +37,10 @@ export const projects: Project[] = [
         team: {fr: 'Iris PECQUET, Eloïse ZIROTTI, Kryse, Adrien FEUGERE, RoPo, Guillaume VANUXEM, Robin SIX, Maxence DELACROIX', en: 'Iris PECQUET, Eloïse ZIROTTI, Kryse, Adrien FEUGERE, RoPo, Guillaume VANUXEM, Robin SIX, Maxence DELACROIX'},
         role: {fr: 'Programmeur', en: 'Programmer'},
         tags: ['Unity', 'C#'],
+        short_description : {
+            fr: `Tabletop Soccer est un jeu de football en multijoueur réalisé le temps d'un weekend pour la GMTK 2022, qui avait comme thème "Roll of the dice".`,
+            en: 'Tabletop Soccer is a multiplayer soccer game that was coded in a span of a weekend for the GMTK 2022, themed around "Roll of the dice".'
+        },
         description: {
             fr: `Tabletop Soccer est un jeu de football en multijoueur réalisé le temps d'un weekend pour la GMTK 2022, qui avait comme thème "Roll of the dice".\n
             Jouable de 2 à 6 joueurs, deux équipes s'affrontent dans un match de foot dans lequel le ballon a pris la forme d'un dé. Chaque fois que le dé s'arrête sur une face pendant quelques instants, il déclenche un des 6 effets pour rendre la partie plus chaotique.`,
@@ -51,6 +59,10 @@ export const projects: Project[] = [
         team: {fr: 'Eloïse ZIROTTI, Robin SIX, Maxence DELACROIX', en: 'Eloïse ZIROTTI, Robin SIX, Maxence DELACROIX'},
         role: {fr: 'Programmeur', en: 'Programmer'},
         tags: ['Unity', 'C#', 'WebGL'],
+        short_description: {
+            fr: `Loopin' Goblin est un jeu d'action point and click réalisé dans le cadre de la GMTK 2025, qui avait comme thème "Loop".`,
+            en: `Loopin' Goblin is a point and click action game that was coded for GMTK 2025, themed around "Loop".\\n`
+        },
         description: {
             fr: `Loopin' Goblin est un jeu d'action point and click réalisé dans le cadre de la GMTK 2025, qui avait comme thème "Loop".\n
              Le joueur est le commandant d'une armée de goblins qui marche en boucle. Le joueur modifie le parcours de son armée en déplaçant des bannières à l'aide sa souris afin d'esquiver les projectiles, de récupérer des bonus et d'affronter les ennemis.`,
@@ -70,6 +82,10 @@ export const projects: Project[] = [
         team: {fr: 'Eloïse ZIROTTI, Robin SIX, Iris PECQUET, Maxence DELACROIX', en: 'Eloïse ZIROTTI, Robin SIX, Iris PECQUET, Maxence DELACROIX'},
         role: {fr: 'Programmeur', en: 'Programmer'},
         tags: ['Godot', 'GDScript', 'WebGL'],
+        short_description: {
+            fr: `Kuiper Space Rescue est un jeu d'exploration réalisé dans le cadre de la Ludum Dare 59, qui avait comme thème "Signal".`,
+            en: `Kuiper Space Rescue is an exploration game made for Ludum Dare 59, themed around "Signal".`,
+        },
         description: {
             fr: `Kuiper Space Rescue est un jeu d'exploration réalisé dans le cadre de la Ludum Dare 59, qui avait comme thème "Signal".\n
             Le joueur incarne un vaisseau spatial perdu dans l'obscurité de l'espace, avec comme seul outil un radar qui permet de détecter de manière temporaire les astéroïdes aux alentours. Pour finir le jeu, le joueur doit réparer 6 satellites qui sont éparpillés et cachés à divers endroits de la carte. Des bonus sont également disponibles, aidant à la navigation ou à la détection des astéroïdes. Il faudra être patient et avancer de manière prudente, car au bout de 3 collisions c'est la mort et on recommence à zéro avec une nouvelle carte.\n
@@ -87,13 +103,18 @@ export const projects: Project[] = [
         title: 'The Last Spell',
         year_of_release: '2023',
         platforms: ['PC', 'PS4', 'PS5', 'Switch'],
+        sales: "~500k+",
         company: 'Ishtar Games',
         genre: {fr: 'RPG Tactical', en: 'Tactical RPG'},
         nominations: ['Pégase 2022', 'Dice Awards 2024'],
         duration: {fr: '3 ans', en: '3 years'},
         team: {fr: '~15 personnes', en: '~15 people'},
-        role: {fr: 'Lead programmeur', en: 'Lead programmer'},
-        tags: ['Unity', 'C#', 'Roguelike', 'Pathfinding'],
+        role: {fr: 'Gameplay Programmeur, Lead programmeur', en: 'Gameplay Programmer, Lead programmer'},
+        tags: ['Unity', 'C#', 'Roguelike', 'Pathfinding', 'Camera AI'],
+        short_description: {
+            fr: `THE LAST SPELL est un tactical RPG se déroulant dans un monde post-apocalyptique arborant un style dark-fantasy. Le jeu implémente une multitudes de mécaniques roguelike et présente un gameplay profond et complexe, caractéristique du genre.`,
+            en: `THE LAST SPELL is a tactical RPG set in a post-apocalyptic world with a dark fantasy aesthetic. The game implements a wide range of roguelike mechanics and features deep, complex gameplay characteristic of the genre.`,
+        },
         description: {
             fr: `THE LAST SPELL est un tactical RPG se déroulant dans un monde post-apocalyptique arborant un style dark-fantasy. Le jeu implémente une multitudes de mécaniques roguelike et présente un gameplay profond et complexe, caractéristique du genre.\n
                 Le joueur dirige une équipe d’une poignée de héros et doit protéger une ville pendant un nombre de jours fixe. La journée il prépare ses défenses et la nuit il fait face à des hordes de zombies.\n
@@ -110,21 +131,37 @@ export const projects: Project[] = [
                 Continuous teamwork and smart task distribution fostered an environment of knowledge-sharing that benefited everyone.\n
                 Following THE LAST SPELL, starting another project (unannounced) with the same development team allowed us to consolidate what we had learned and confirm our methods and roles. Within ISHTAR GAMES I was able to bring my vision of programming to life through the code architectures I put in place. Modularity, maintainability and system agnosticism are at the core of my working philosophy.`,
         },
+        tech_description: {
+            fr: ``,
+            en: ``,
+        },
         steam_url: 'https://store.steampowered.com/app/1105670/The_Last_Spell/',
     },
     {
         id: '005',
         slug: 'project-005',
-        title: '???????',
+        override_title: {
+            fr: "Projet non annoncé",
+            en: "Unannounced project",
+        },
+        title: 'NDA Project',
         company: 'Ishtar Games',
-        genre: {fr: 'NDA', en: 'NDA'},
+        genre: {fr: '????', en: '????'},
         duration: {fr: '2 ans', en: '2 years'},
         team: {fr: '~15 personnes', en: '~15 people'},
         role: {fr: 'Lead programmeur', en: 'Lead programmer'},
         tags: ['Unity', 'C#', 'SOLID', 'ScriptableObjects', 'Multiplayer'],
+        short_description: {
+            fr: `Projet sous NDA.`,
+            en: `Project under NDA.`,
+        },
         description: {
             fr: `Projet encore sous NDA. Ce jeu est le premier projet professionnel pour lequel j'ai désigné l'architecture code de A à Z. J'ai ainsi organisé le développement d'une nouvelle librairie interne au studio pensée sur le long terme, j'ai unifié le coding style de l'équipe de développement et je me suis assuré que les bonnes pratiques étaient respéctées dès le début pour chaque feature afin de poser une base solide et stable sur laquelle il était simple et agréable de travailler. Pas de code spaghetti, aucune fonction dupliquée et une approche modulaire et agnostique.`,
             en: `Project still under NDA. This game is the first professional project for which I designed the code architecture from A to Z. I organized the development of a new internal studio library built with longevity in mind, unified the coding style across the development team, and made sure best practices were followed from the start for every feature, laying a solid and stable foundation that was simple and enjoyable to build upon. No spaghetti code, no duplicated functions, and a modular, agnostic approach.`,
+        },
+        tech_description: {
+            fr: ``,
+            en: ``,
         },
     },
     {
@@ -137,11 +174,19 @@ export const projects: Project[] = [
         team: {fr: 'Antoine BOUCHERIKHA, Anne HÉLOU, Thomas ROUVILLAIN, Ambrune MARTIN, Aurélie STEUNOU-GUÉGAN, Maxence DELACROIX', en: 'Antoine BOUCHERIKHA, Anne HÉLOU, Thomas ROUVILLAIN, Ambrune MARTIN, Aurélie STEUNOU-GUÉGAN, Maxence DELACROIX'},
         role: {fr: 'Tech Lead', en: 'Tech Lead'},
         tags: ['Unity', 'C#', 'iOS', 'Simulation', 'WWise', 'Burst'],
+        short_description: {
+            fr: `ENDOPLANETO se positionne à la frontière entre le jeu vidéo et l’expérience audio interactive, reprenant les caractéristiques de ces deux médias et les équilibrant dans une expérience originale.`,
+            en: `ENDOPLANETO positions itself at the boundary between video games and interactive audio experience, drawing on the characteristics of both mediums and balancing them into an original experience.`,
+        },
         description: {
             fr: `ENDOPLANETO se positionne à la frontière entre le jeu vidéo et l’expérience audio interactive, reprenant les caractéristiques de ces deux médias et les équilibrant dans une expérience originale.\n
             Le projet prend deux formes, l’une statique sur téléphone et l’autre en déplacement libre (6DOF). Ces deux formes invitent le·la joueur·euse à réfléchir sur son rapport au vivant en mettant en avant l’écoute ainsi que la perception de soi et de ce qui nous entoure.`,
             en: `ENDOPLANETO positions itself at the boundary between video games and interactive audio experience, drawing on the characteristics of both mediums and balancing them into an original experience.\n
             The project takes two forms, one static on phone and the other in free movement (6DOF). Both forms invite the player to reflect on their relationship with the living world by foregrounding listening as well as the perception of oneself and one's surroundings.`,
+        },
+        tech_description: {
+            fr: ``,
+            en: ``,
         },
     },
 ];

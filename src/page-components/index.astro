@@ -22,14 +22,14 @@ const text = t(lang);
     <hr class="rule-dashed reveal"/>
     <p class="reveal" style="font-size: 18px; font-weight: 500; margin: 1rem 0;">{text.home.tagline}</p>
     <hr class="rule-dashed reveal"/>
-    <p class="section-head reveal">— Item — Latest project</p>
+    <p class="section-head reveal">{text.home.item_label} {text.home.latest_project_label}</p>
     <div class="reveal">
         <div class="project-img"><img src=`/images/${lastProject.slug}/banner.png` alt=`${lastProject.title} · screenshot` /></div>
         <div class="receipt-row" style="margin-top:0.5rem;"><span class="lbl">{text.projects.genre_label}</span><span class="val">{lastProject.genre[lang]}</span></div>
         <div class="receipt-row"><span class="lbl">{text.projects.duration_label}</span><span class="val">{lastProject.duration[lang]}</span></div>
         <div style="margin:0.5rem 0;">{lastProject.tags.map(tag => <span class="tag">{tag}</span>)}</div>
         <div style="display:flex;justify-content:space-between;margin-top:0.8rem;">
-            <a href={`/${lang}/projects/${lastProject.slug}`} class="btn-receipt">See project</a>
+            <a href={`/${lang}/projects/${lastProject.slug}`} class="btn-receipt">{text.home.see_project}</a>
             {lastProject.itch_url && (<a href={lastProject.itch_url} target="_blank" rel="noopener" class="btn-receipt">{text.projects.itch_label}</a>)}
         </div>
     </div>

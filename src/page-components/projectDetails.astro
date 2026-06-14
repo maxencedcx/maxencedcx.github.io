@@ -38,6 +38,18 @@ const text = t(lang);
                 <span class="val">{project.year_of_release}</span>
             </div>
         )}
+        {project.platforms && (
+                <div class="receipt-row reveal-item">
+                    <span class="lbl">{text.projects.platforms_label}</span>
+                    <span class="val">{project.platforms}</span>
+                </div>
+        )}
+        {project.sales && (
+                <div class="receipt-row reveal-item">
+                    <span class="lbl">{text.projects.sales_label}</span>
+                    <span class="val">{project.sales}</span>
+                </div>
+        )}
         <div class="receipt-row reveal-item">
             <span class="lbl">{text.projects.duration_label}</span>
             <span class="val">{project.duration[lang]}</span>
@@ -53,6 +65,10 @@ const text = t(lang);
     <div class="reveal">
         <div style="margin-bottom:0.8rem;">{project.tags.map(tag => <span class="tag">{tag}</span>)}</div>
         <p style="white-space: pre-line;font-size:13px;color:var(--ink-muted);line-height:1.7;margin:0 0 1rem;">{project.description[lang]}</p>
+        {project.tech_description && (
+                <p class="section-head reveal">{text.projects.tech_description_label}</p>
+                <p style="white-space: pre-line;font-size:13px;color:var(--ink-muted);line-height:1.7;margin:0 0 1rem;">{project.tech_description[lang]}</p>
+        )}
     </div>
     <hr class="rule-dashed reveal"/>
     {project.itch_embed && (
