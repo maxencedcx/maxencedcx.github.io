@@ -110,7 +110,7 @@ export const projects: Project[] = [
         duration: {fr: '3 ans', en: '3 years'},
         team: {fr: '~15 personnes', en: '~15 people'},
         role: {fr: 'Gameplay Programmeur, Lead programmeur', en: 'Gameplay Programmer, Lead programmer'},
-        tags: ['Unity', 'C#', 'Roguelike', 'Pathfinding', 'Camera AI'],
+        tags: ['Unity', 'C#', 'SVN', 'Roguelike', 'Pathfinding', 'Camera AI'],
         short_description: {
             fr: `THE LAST SPELL est un tactical RPG se déroulant dans un monde post-apocalyptique arborant un style dark-fantasy. Le jeu implémente une multitudes de mécaniques roguelike et présente un gameplay profond et complexe, caractéristique du genre.`,
             en: `THE LAST SPELL is a tactical RPG set in a post-apocalyptic world with a dark fantasy aesthetic. The game implements a wide range of roguelike mechanics and features deep, complex gameplay characteristic of the genre.`,
@@ -150,7 +150,7 @@ export const projects: Project[] = [
         duration: {fr: '2 ans', en: '2 years'},
         team: {fr: '~15 personnes', en: '~15 people'},
         role: {fr: 'Lead programmeur', en: 'Lead programmer'},
-        tags: ['Unity', 'C#', 'SOLID', 'ScriptableObjects', 'Multiplayer'],
+        tags: ['Unity', 'C#', 'SVN', 'SOLID', 'ScriptableObjects', 'Multiplayer'],
         short_description: {
             fr: `Projet sous NDA.`,
             en: `Project under NDA.`,
@@ -160,8 +160,14 @@ export const projects: Project[] = [
             en: `Project still under NDA. This game is the first professional project for which I designed the code architecture from A to Z. I organized the development of a new internal studio library built with longevity in mind, unified the coding style across the development team, and made sure best practices were followed from the start for every feature, laying a solid and stable foundation that was simple and enjoyable to build upon. No spaghetti code, no duplicated functions, and a modular, agnostic approach.`,
         },
         tech_description: {
-            fr: ``,
-            en: ``,
+            fr: `• Design d'architecture code
+            • Code reviews
+            • Mise en place d'une architecture multijoueur via Unity network
+            • Système d'action, de conditions et de durée via Scriptable Objects`,
+            en: `• Code architecture design
+            • Code reviews
+            • Multiplayer architecture using Unity network
+            • Action, conditions and duration systems using Scriptable Objects`,
         },
     },
     {
