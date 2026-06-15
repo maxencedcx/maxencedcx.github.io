@@ -36,7 +36,7 @@ export const projects: Project[] = [
         duration: {fr: '50h · Game Jam', en: '50h · Game Jam'},
         team: {fr: 'Iris PECQUET, Eloïse ZIROTTI, Kryse, Adrien FEUGERE, RoPo, Guillaume VANUXEM, Robin SIX, Maxence DELACROIX', en: 'Iris PECQUET, Eloïse ZIROTTI, Kryse, Adrien FEUGERE, RoPo, Guillaume VANUXEM, Robin SIX, Maxence DELACROIX'},
         role: {fr: 'Programmeur', en: 'Programmer'},
-        tags: ['Unity', 'C#'],
+        tags: ['Unity', 'C#', 'Local multiplayer', 'Game Design'],
         short_description : {
             fr: `Tabletop Soccer est un jeu de football en multijoueur réalisé le temps d'un weekend pour la GMTK 2022, qui avait comme thème "Roll of the dice".`,
             en: 'Tabletop Soccer is a multiplayer soccer game that was coded in a span of a weekend for the GMTK 2022, themed around "Roll of the dice".'
@@ -58,7 +58,7 @@ export const projects: Project[] = [
         duration: {fr: '96h · Game Jam', en: '96h · Game Jam'},
         team: {fr: 'Eloïse ZIROTTI, Robin SIX, Maxence DELACROIX', en: 'Eloïse ZIROTTI, Robin SIX, Maxence DELACROIX'},
         role: {fr: 'Programmeur', en: 'Programmer'},
-        tags: ['Unity', 'C#', 'WebGL'],
+        tags: ['Unity', 'C#', 'WebGL', 'Game Design'],
         short_description: {
             fr: `Loopin' Goblin est un jeu d'action point and click réalisé dans le cadre de la GMTK 2025, qui avait comme thème "Loop".`,
             en: `Loopin' Goblin is a point and click action game that was coded for GMTK 2025, themed around "Loop".`
@@ -81,7 +81,7 @@ export const projects: Project[] = [
         duration: {fr: '48h · Game Jam', en: '48h · Game Jam'},
         team: {fr: 'Eloïse ZIROTTI, Robin SIX, Iris PECQUET, Maxence DELACROIX', en: 'Eloïse ZIROTTI, Robin SIX, Iris PECQUET, Maxence DELACROIX'},
         role: {fr: 'Programmeur', en: 'Programmer'},
-        tags: ['Godot', 'GDScript', 'WebGL'],
+        tags: ['Godot', 'GDScript', 'WebGL', 'Game Design'],
         short_description: {
             fr: `Kuiper Space Rescue est un jeu d'exploration réalisé dans le cadre de la Ludum Dare 59, qui avait comme thème "Signal".`,
             en: `Kuiper Space Rescue is an exploration game made for Ludum Dare 59, themed around "Signal".`,
@@ -110,7 +110,7 @@ export const projects: Project[] = [
         duration: {fr: '3 ans', en: '3 years'},
         team: {fr: '~15 personnes', en: '~15 people'},
         role: {fr: 'Gameplay Programmeur, Lead programmeur', en: 'Gameplay Programmer, Lead programmer'},
-        tags: ['Unity', 'C#', 'SVN', 'Roguelike', 'Pathfinding', 'Camera AI'],
+        tags: ['Unity', 'C#', 'SVN', 'Roguelike', 'Pathfinding', 'Algorithms'],
         short_description: {
             fr: `THE LAST SPELL est un tactical RPG se déroulant dans un monde post-apocalyptique arborant un style dark-fantasy. Le jeu implémente une multitudes de mécaniques roguelike et présente un gameplay profond et complexe, caractéristique du genre.`,
             en: `THE LAST SPELL is a tactical RPG set in a post-apocalyptic world with a dark fantasy aesthetic. The game implements a wide range of roguelike mechanics and features deep, complex gameplay characteristic of the genre.`,
@@ -132,8 +132,12 @@ export const projects: Project[] = [
                 Following THE LAST SPELL, starting another project (unannounced) with the same development team allowed us to consolidate what we had learned and confirm our methods and roles. Within ISHTAR GAMES I was able to bring my vision of programming to life through the code architectures I put in place. Modularity, maintainability and system agnosticism are at the core of my working philosophy.`,
         },
         tech_description: {
-            fr: ``,
-            en: ``,
+            fr: `• Développement et implémentation d'algorithmes, tel que le KMeans utilisé pour optimiser les mouvements de caméra
+            • Système de "code" XML, permettant aux game designers de créer du nouveau gameplay sans avoir besoin d'un game dev et ouvrant la porte au modding joueur
+            • Des missions diverses de gameplay, d'UI, d'IA, de gestion de fichiers de sauvegarde ainsi que du bugfix`,
+            en: `• Development and implementation of several algorithms, such as KMeans used to optimize camera movements
+            • XML "code" system, allowing game designers to create new gameplay without the need for a game dev and opening the modding possibilities
+            • Diverse game developer missions, such as gameplay, UI, AI, save file management as well as bugfixes`,
         },
         steam_url: 'https://store.steampowered.com/app/1105670/The_Last_Spell/',
     },
@@ -179,7 +183,7 @@ export const projects: Project[] = [
         duration: {fr: 'En cours', en: 'Ongoing'},
         team: {fr: 'Antoine BOUCHERIKHA, Anne HÉLOU, Thomas ROUVILLAIN, Ambrune MARTIN, Aurélie STEUNOU-GUÉGAN, Maxence DELACROIX', en: 'Antoine BOUCHERIKHA, Anne HÉLOU, Thomas ROUVILLAIN, Ambrune MARTIN, Aurélie STEUNOU-GUÉGAN, Maxence DELACROIX'},
         role: {fr: 'Tech Lead', en: 'Tech Lead'},
-        tags: ['Unity', 'C#', 'iOS', 'Simulation', 'WWise', 'Burst'],
+        tags: ['Unity', 'C#', 'Git', 'GitLab', 'iOS', 'Simulation', 'WWise', 'Burst'],
         short_description: {
             fr: `ENDOPLANETO se positionne à la frontière entre le jeu vidéo et l’expérience audio interactive, reprenant les caractéristiques de ces deux médias et les équilibrant dans une expérience originale.`,
             en: `ENDOPLANETO positions itself at the boundary between video games and interactive audio experience, drawing on the characteristics of both mediums and balancing them into an original experience.`,
