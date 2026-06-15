@@ -230,16 +230,19 @@ body {
 
 .theme-switch {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 21px;
     color: var(--ink-faint);
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
+    position: relative;
+    top: -6px;
+    right: 6px;
 }
 
 .lang-switch {
-    font-size: 11px;
+    font-size: 14px;
     color: var(--ink-faint);
     display: flex;
     gap: 6px;
