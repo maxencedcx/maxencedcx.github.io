@@ -134,10 +134,14 @@ export const projects: Project[] = [
         tech_description: {
             fr: `• Développement et implémentation d'algorithmes, tel que le KMeans utilisé pour optimiser les mouvements de caméra
             • Système de "code" XML, permettant aux game designers de créer du nouveau gameplay sans avoir besoin d'un game dev et ouvrant la porte au modding joueur
-            • Des missions diverses de gameplay, d'UI, d'IA, de gestion de fichiers de sauvegarde ainsi que du bugfix`,
+            • Système de localisation dynamique basé sur des paramètres, limitant les retouches du fichiers de traductions et permettant des textes évolutifs au sein du jeu
+            • Des missions diverses de gameplay, d'UI, d'IA, de gestion de fichiers de sauvegarde ainsi que du bugfix
+            • Code reviews`,
             en: `• Development and implementation of several algorithms, such as KMeans used to optimize camera movements
             • XML "code" system, allowing game designers to create new gameplay without the need for a game dev and opening the modding possibilities
-            • Diverse game developer missions, such as gameplay, UI, AI, save file management as well as bugfixes`,
+            • Dynamic localization system based on parameters, avoiding redundant edit to the translations file and allowing evolutive text in-game
+            • Diverse game developer missions, such as gameplay, UI, AI, save file management as well as bugfixes
+            • Code reviews`,
         },
         steam_url: 'https://store.steampowered.com/app/1105670/The_Last_Spell/',
     },
