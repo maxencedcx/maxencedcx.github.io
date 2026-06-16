@@ -35,14 +35,25 @@ const navLinks = [
         const saved = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const isDark = saved === 'dark' || (!saved && prefersDark);
+        const html = document.documentElement;
 
         if (isDark) {
-            document.documentElement.classList.add('dark');
+            html.classList.add('dark');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const icon = document.getElementById('theme-icon');
+            const icon = document.getElementById('theme-toggle');
             if (icon) icon.textContent = isDark ? '☽' : '☀';
+
+            function updateIcon() {
+                if (icon) icon.textContent = html.classList.contains('dark') ? '☽' : '☀︎';
+            }
+
+            icon?.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+                updateIcon();
+            });
         });
     </script>
 
@@ -91,22 +102,5 @@ const navLinks = [
     </div>
     <p class="footer-txt">maxencedcx.github.io · {text.home.footer_thanks}</p>
 </div>
-
-<script>
-    const toggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    function updateIcon() {
-        if (toggle) toggle.textContent = html.classList.contains('dark') ? '☽' : '☀︎';
-    }
-
-    updateIcon();
-
-    toggle?.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-        updateIcon();
-    });
-</script>
 </body>
 </html>
