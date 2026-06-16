@@ -20,12 +20,12 @@ const home = t(lang).home;
         <div class="receipt-row"><span class="lbl">{text.passion_label}</span><span class="val">{text.passion_value}</span></div>
     </div>
     <hr class="rule-dashed"/>
-    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 1.5rem; margin:0 0 1rem;">
+    <div class="about-row">
         <div style="align-content: end;">
-            <img class="portrait portrait-dark" src=`/images/about/portrait_dark.png` alt=`portrait`/>
-            <img class="portrait portrait-light" src=`/images/about/portrait_light.png` alt=`portrait`/>
+            <img class="portrait portrait-dark" src="/images/about/portrait_dark.png" alt="portrait"/>
+            <img class="portrait portrait-light" src="/images/about/portrait_light.png" alt="portrait"/>
         </div>
-        <div style="align-content: end;text-align:justify; text-justify: inter-word;">
+        <div style="align-content: end; text-align:justify; text-justify: inter-word;">
             <p class="section-head">{text.bio_title}</p>
             <p style="font-size:13px;color:var(--ink-muted);line-height:1.8;">{text.bio}</p>
         </div>
