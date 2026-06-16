@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {type Lang, t, receipt_number} from '../i18n/translations';
+import {type Lang, t} from '../i18n/translations';
 import {projects, lastProject, isPro} from '../content/projects';
 
 interface Props {
@@ -12,7 +12,6 @@ const text = t(lang);
 ---
 
 <Layout lang={lang} title="Index" currentPath="/">
-    <p class="section-head">{receipt_number}</p>
     <div>
         <div class="receipt-row"><span class="lbl">{text.home.status_label}</span><span class="val">{text.home.status_value}</span></div>
         <div class="receipt-row"><span class="lbl">{text.home.specialty_label}</span><span class="val">{text.home.specialty_value}</span></div>
@@ -22,7 +21,7 @@ const text = t(lang);
     <hr class="rule-dashed"/>
     <p style="font-size: 18px; font-weight: 500; margin: 1rem 0;">{text.home.tagline}</p>
     <hr class="rule-dashed"/>
-    <p class="section-head">{text.home.item_label} {text.home.latest_project_label}</p>
+    <p class="section-head">{text.home.latest_project_label}</p>
     <div>
         <div class="project-img"><img src=`/images/${lastProject.slug}/banner.png` alt=`${lastProject.title} · screenshot` /></div>
         <div class="receipt-row" style="margin-top:0.5rem;"><span class="lbl">{text.projects.genre_label}</span><span class="val">{lastProject.genre[lang]}</span></div>
