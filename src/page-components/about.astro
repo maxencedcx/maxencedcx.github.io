@@ -12,29 +12,36 @@ const home = t(lang).home;
 ---
 
 <Layout lang={lang} title="About" currentPath="/about">
-    <p class="section-head reveal">{receipt_number}</p>
-    <div class="reveal-group">
-        <div class="receipt-row reveal-item"><span class="lbl">{text.name_label}</span><span class="val">Maxence DELACROIX</span></div>
-        <div class="receipt-row reveal-item"><span class="lbl">{text.role_label}</span><span class="val">Game Programmer</span></div>
-        <div class="receipt-row reveal-item"><span class="lbl">{text.location_label}</span><span class="val">Lille, France</span></div>
-        <div class="receipt-row reveal-item"><span class="lbl">{text.languages_label}</span><span class="val">C# · C · C++</span></div>
-        <div class="receipt-row reveal-item"><span class="lbl">{text.passion_label}</span><span class="val">{text.passion_value}</span></div>
+    <div>
+        <div class="receipt-row"><span class="lbl">{text.name_label}</span><span class="val">Maxence DELACROIX</span></div>
+        <div class="receipt-row"><span class="lbl">{text.role_label}</span><span class="val">Game Programmer</span></div>
+        <div class="receipt-row"><span class="lbl">{text.location_label}</span><span class="val">Lille, France</span></div>
+        <div class="receipt-row"><span class="lbl">{text.languages_label}</span><span class="val">C# · C · C++</span></div>
+        <div class="receipt-row"><span class="lbl">{text.passion_label}</span><span class="val">{text.passion_value}</span></div>
     </div>
-    <hr class="rule-dashed reveal"/>
-    <p class="section-head reveal">{text.bio_title}</p>
-    <p class="reveal" style="font-size:13px;color:var(--ink-muted);line-height:1.8;margin:0 0 1rem;">{text.bio}</p>
-    <hr class="rule-dashed reveal"/>
-    <p class="section-head reveal">{text.contact_title}</p>
-    <div class="reveal-group">
-        <div class="receipt-row reveal-item">
+    <hr class="rule-dashed"/>
+    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 1.5rem; margin:0 0 1rem;">
+        <div style="align-content: end;">
+            <img class="portrait portrait-dark" src=`/images/about/portrait_dark.png` alt=`portrait`/>
+            <img class="portrait portrait-light" src=`/images/about/portrait_light.png` alt=`portrait`/>
+        </div>
+        <div style="align-content: end;text-align:justify; text-justify: inter-word;">
+            <p class="section-head">{text.bio_title}</p>
+            <p style="font-size:13px;color:var(--ink-muted);line-height:1.8;">{text.bio}</p>
+        </div>
+    </div>
+    <hr class="rule-dashed"/>
+    <p class="section-head">{text.contact_title}</p>
+    <div>
+        <div class="receipt-row">
             <span class="lbl">{text.github_label}</span><a href="https://github.com/maxencedcx" target="_blank" rel="noopener" style="font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);">github.com/maxencedcx</a>
         </div>
-        <div class="receipt-row reveal-item">
+        <div class="receipt-row">
             <span class="lbl">{text.email_label}</span><a href="mailto:maxence.delacroix@outlook.fr" style="font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);">maxence.delacroix@outlook.fr</a>
         </div>
     </div>
-    <hr class="rule-solid reveal"/>
-    <div class="receipt-row reveal">
+    <hr class="rule-solid"/>
+    <div class="receipt-row">
         <span style="font-size:15px;font-weight:500;">MAXENCE DELACROIX</span>
         <span style="font-size:13px;color:var(--ink-muted);">{home.subtitle}</span>
     </div>

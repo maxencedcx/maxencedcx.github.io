@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {type Lang, t, receipt_number} from '../i18n/translations';
+import {type Lang, t} from '../i18n/translations';
 import {projects} from '../content/projects';
 
 interface Props {
@@ -12,9 +12,8 @@ const text = t(lang);
 ---
 
 <Layout lang={lang} title="Projects" currentPath="/projects">
-    <p class="section-head reveal">{receipt_number}</p>
     {[...projects].reverse().map((p, i) => (
-            <div class="reveal" style="margin-bottom:0.5rem;">
+            <div style="margin-bottom:0.5rem;">
                 <div class="receipt-row"><span style="font-size:12px;color:var(--ink-faint);">#{p.id}</span><span style="font-size:12px;color:var(--ink-faint);">{p.year_of_release}</span></div>
                 <div class="project-img"><img src=`/images/${p.slug}/banner.png` alt=`${p.title} · screenshot` /></div>
                 <div class="receipt-row" style="margin-top:0.4rem;"><span style="font-size:15px;font-weight:500;">{(p.override_title && p.override_title[lang]) || p.title}</span><span style="font-size:12px;color:var(--ink-muted);">{p.genre[lang]}</span></div>
@@ -29,6 +28,6 @@ const text = t(lang);
                 {i < projects.length - 1 && <hr class="rule-dashed" style="margin-top:1.2rem;"/>}
             </div>
     ))}
-    <hr class="rule-solid reveal"/>
-    <div class="receipt-row reveal"><span style="font-size:15px;font-weight:500;">{text.home.total_label}</span><span style="font-size:15px;font-weight:500;">{projects.length}</span></div>
+    <hr class="rule-solid"/>
+    <div class="receipt-row"><span style="font-size:15px;font-weight:500;">{text.home.total_label}</span><span style="font-size:15px;font-weight:500;">{projects.length}</span></div>
 </Layout>

@@ -202,11 +202,6 @@ body {
     border-bottom-color: var(--ink);
 }
 
-.reveal {
-    /*opacity: 0;
-    transform: translateY(18px);*/
-}
-
 .leader-row {
     display: flex;
     align-items: baseline;
@@ -262,4 +257,6 @@ body {
     color: var(--rule);
 }
 
-
+.portrait { position: relative; z-index: 1000; }
+:root.dark .portrait-light { display: none; }
+:root:not(.dark) .portrait-dark { display: none; }
