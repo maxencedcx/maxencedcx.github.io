@@ -235,10 +235,12 @@ body {
 }
 
 .lang-switch {
-    font-size: max(14px, 1vw);
+    font-size: clamp(14px, 1vw, 20px);
     color: var(--ink-faint);
     display: flex;
     gap: 6px;
+    height: 32px;
+    align-items: center;
 }
 
 .lang-switch a {
